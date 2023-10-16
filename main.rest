@@ -1,0 +1,2 @@
+###
+GET http://api.weatherapi.com/v1/current.json?key=7172fd1413bb4f5bb65123651231110&q=jakarta
