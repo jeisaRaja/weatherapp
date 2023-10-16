@@ -10,7 +10,6 @@ function loadToUI(data) {
   const pressure = document.getElementById('pressure');
   const wind = document.getElementById('wind');
 
-
   const options = {
     weekday: 'long',
     day: 'numeric',
@@ -35,7 +34,7 @@ async function getWeatherData(city) {
   try {
     const loadingScreen = document.getElementById('loading-screen');
     loadingScreen.style.display = 'flex';
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=7172fd1413bb4f5bb65123651231110&q=${city}`, { mode: 'cors' });
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=7172fd1413bb4f5bb65123651231110&q=${city}`, { mode: 'cors' });
     if (!response.ok) {
       const error = await response.json();
       throw new Error(error.error.message);
