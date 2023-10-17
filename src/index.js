@@ -1,3 +1,5 @@
+import { getLocation, setLocation } from './store';
+
 function loadToUI(data) {
   const location = document.getElementById('location');
   const temp = document.querySelector('#temp');
@@ -55,5 +57,10 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const formData = new FormData(form);
   const city = formData.get('city');
+  setLocation(city);
   getWeatherData(city);
 });
+
+window.onload = function load() {
+  getWeatherData(getLocation());
+};
